@@ -12,3 +12,15 @@
 - h2 접속
   - 초기 접속은 Default로 접속
   - 이후 `jdbc:h2:tcp://localhost/~/test`를 통해 접속
+
+## JDBC 설정
+- jdbc config error
+  - jdbsMemberRepository에서 db를 사용한 요청에 사용자정보 등의 부족으로 실패할 경우 아래의 설정을 추가하여 해결한다.
+
+```
+// application.properties
+...
+spring.datasource.username=sa
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=none
+```
